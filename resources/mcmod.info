@@ -1,0 +1,15 @@
+[
+{
+  "modid": "battlebotcraft",
+  "name": "BattleBotCraft",
+  "description": "",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Charles Howard"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": []
+}
+]
