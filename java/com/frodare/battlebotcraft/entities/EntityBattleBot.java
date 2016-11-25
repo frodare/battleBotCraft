@@ -35,8 +35,10 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class EntityBattleBot extends EntityCreature {
@@ -78,9 +80,26 @@ public class EntityBattleBot extends EntityCreature {
 
 	}
 
+	public static class BattleBotEvent extends Event {
+
+		public static class Spawn extends BattleBotEvent {
+
+			protected final EntityBattleBot entity;
+
+			public Spawn(EntityBattleBot entity) {
+				this.entity = entity;
+			}
+
+			public EntityBattleBot getEntity() {
+				return entity;
+			}
+		}
+	}
+
 	protected void entityInit() {
 		super.entityInit();
-
+		System.out.println("*********** entityInit *** ");
+		MinecraftForge.EVENT_BUS.post(new BattleBotEvent.Spawn(this));
 	}
 
 	public void onLivingUpdate() {

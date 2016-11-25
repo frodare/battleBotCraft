@@ -7,7 +7,6 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 @Mod(modid = BattleBotCraft.MODID, name = BattleBotCraft.MODNAME, version = BattleBotCraft.VERSION)
 public class BattleBotCraft {
@@ -35,11 +34,6 @@ public class BattleBotCraft {
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent e) {
 		proxy.postInit(e);
-	}
-
-	@EventHandler
-	public void serverLoad(FMLServerStartingEvent e) {
-
 	}
 
 }
